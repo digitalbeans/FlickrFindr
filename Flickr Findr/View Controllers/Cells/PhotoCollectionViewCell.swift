@@ -13,7 +13,6 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 	
 	@IBOutlet var imageView: UIImageView!
 	@IBOutlet var titleLabel: UILabel!
-	var image: UIImage?
 	
     override func awakeFromNib() {
         super.awakeFromNib()
