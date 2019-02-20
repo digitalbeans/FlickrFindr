@@ -101,8 +101,8 @@ extension MainViewController {
 		
 		searchHistoryTableView.reloadData()
 		let height:CGFloat = (CGFloat(searchHistory.count) * Constants.SearchHistory.CellHeight) + Constants.SearchHistory.HeaderHeight
-		
-		searchHistoryTableHeightConstraint.constant = height
+		let newHeight: CGFloat = min(height, collectionView.frame.size.height)
+		searchHistoryTableHeightConstraint.constant = newHeight
 		searchHistoryTableView.layoutIfNeeded()
 	}
 }

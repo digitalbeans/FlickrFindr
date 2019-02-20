@@ -25,7 +25,7 @@
                         <state key="normal" title="Clear"/>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="0.87749841370558379" green="0.87749841370558379" blue="0.87749841370558379" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" red="0.87749841370558379" green="0.87749841370558379" blue="0.87749841370558379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="U5P-YB-KRx" secondAttribute="bottom" id="0U0-aO-5yx"/>
                     <constraint firstAttribute="trailing" secondItem="U5P-YB-KRx" secondAttribute="trailing" constant="10" id="2oP-Ar-GZ8"/>

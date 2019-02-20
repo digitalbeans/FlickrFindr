@@ -42,6 +42,15 @@ class MainViewController: UIViewController {
 		loadData(searchTerm: searchTerm, dataLoader: dataLoader)
 	}
 	
+	override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+		
+		// update the height of the search history table so that it doesn't fall past bottom of screen
+		// execute after delay, so that view can commplete drawing
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+			self.showSearchHistory()
+		})
+	}
+	
 	/// Background view to display message when there are no photos to display
 	var backgroundView: UIView {
 		
