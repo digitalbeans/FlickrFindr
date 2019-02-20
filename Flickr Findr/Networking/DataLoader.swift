@@ -39,7 +39,7 @@ class DataLoader {
 		guard let urlString = String(format: Constants.Flickr.photoSearchURL, searchTerm, page).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
 			  let url = URL(string: urlString) else {
 			
-			completion(nil)
+			failure("Error processing URL")
 			return
 		}
 		
@@ -50,7 +50,7 @@ class DataLoader {
 				guard response.result.isSuccess,
 				      let data = response.data else {
 						
-					completion(nil)
+					failure(response.result.error?.localizedDescription)
 					return
 				}
 				
