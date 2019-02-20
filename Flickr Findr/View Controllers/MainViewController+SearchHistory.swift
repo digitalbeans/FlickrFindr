@@ -39,7 +39,8 @@ extension MainViewController: UITableViewDelegate {
 		}
 		
 		cell.clearButton.addTarget(self, action: #selector(clearSearchHistory(_:)), for: .touchUpInside)
-		
+		cell.cancelButton.addTarget(self, action: #selector(cancelSearch(_:)), for: .touchUpInside)
+
 		return cell.contentView
 	}
 	
@@ -58,7 +59,14 @@ extension MainViewController: UITableViewDelegate {
 
 /// Extension to add handling of search history to MainViewController
 extension MainViewController {
-	
+
+	/// Cancel search
+	@IBAction func cancelSearch(_ sender: Any) {
+		
+		searchBar.endEditing(true)
+		hideSearchHistory()
+	}
+
 	/// Clears the search history
 	@IBAction func clearSearchHistory(_ sender: Any) {
 		

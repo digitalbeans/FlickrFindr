@@ -12,6 +12,7 @@ import UIKit
 class SearchHistoryHeaderViewCell: UITableViewCell {
 	
 	@IBOutlet var clearButton: UIButton!
+	@IBOutlet var cancelButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

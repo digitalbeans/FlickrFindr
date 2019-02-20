@@ -24,17 +24,26 @@
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="Clear"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpg-iJ-VJi">
+                        <rect key="frame" x="10" y="0.0" width="39" height="43.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="Cancel"/>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" red="0.87749841370558379" green="0.87749841370558379" blue="0.87749841370558379" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="U5P-YB-KRx" secondAttribute="bottom" id="0U0-aO-5yx"/>
                     <constraint firstAttribute="trailing" secondItem="U5P-YB-KRx" secondAttribute="trailing" constant="10" id="2oP-Ar-GZ8"/>
+                    <constraint firstItem="qpg-iJ-VJi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="8Ax-TJ-lwb"/>
+                    <constraint firstAttribute="bottom" secondItem="qpg-iJ-VJi" secondAttribute="bottom" id="a6A-Tq-X13"/>
                     <constraint firstItem="U5P-YB-KRx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tGO-YB-jLp"/>
+                    <constraint firstItem="qpg-iJ-VJi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tJx-cu-1t3"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="clearButton" destination="U5P-YB-KRx" id="b4J-zg-Kzy"/>
+                <outlet property="cancelButton" destination="qpg-iJ-VJi" id="jzh-nA-YEO"/>
+                <outlet property="clearButton" destination="U5P-YB-KRx" id="uaY-DL-YHS"/>
             </connections>
         </tableViewCell>
     </objects>
