@@ -13,12 +13,15 @@ class MainViewController: UIViewController {
 	@IBOutlet var collectionView: UICollectionView!
 	@IBOutlet var activityIndicator: UIActivityIndicatorView!
 	@IBOutlet var searchBar: UISearchBar!
+	@IBOutlet var searchHistoryTableView: UITableView!
+	@IBOutlet var searchHistoryTableHeightConstraint: NSLayoutConstraint!
 	
 	private var pageOffset: Int = 0
 	private var photos: [Photo] = []
-    private var searchTerm: String?
+	var searchTerm: String?
 	private let reloadDistance: CGFloat = 50
 	private let dataLoader = DataLoader()
+	var searchHistory: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +29,20 @@ class MainViewController: UIViewController {
         // Register cell classes
 		collectionView.register(UINib(nibName: PhotoCollectionViewCell.identifier, bundle: nil),
 								forCellWithReuseIdentifier: PhotoCollectionViewCell.identifier)
+		
+		searchHistoryTableView.register(UINib(nibName: SearchHistoryTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: SearchHistoryTableViewCell.identifier)
+		searchHistoryTableView.register(UINib(nibName: SearchHistoryHeaderViewCell.identifier, bundle: nil), forCellReuseIdentifier: SearchHistoryHeaderViewCell.identifier)
 
 		navigationItem.title = Constants.titles.appTitle
+		searchHistoryTableView.setBorder(color: .lightGray)
+		searchHistory = UserDefaults.loadSearchHistory()
 		
 		guard let searchTerm = searchTerm else { return }
 		
 		loadData(searchTerm: searchTerm, dataLoader: dataLoader)
 	}
 	
+	/// Background view to display message when there are no photos to display
 	var backgroundView: UIView {
 		
 		let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
@@ -44,6 +53,7 @@ class MainViewController: UIViewController {
 		return label
 	}
 	
+	/// Clears current photo data
 	func reset() {
 		
 		photos = []
@@ -54,11 +64,6 @@ class MainViewController: UIViewController {
 	
 extension MainViewController: UICollectionViewDataSource {
 	
-	func numberOfSections(in collectionView: UICollectionView) -> Int {
-
-		return 1
-    }
-
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 
 		collectionView.backgroundView = photos.count == 0 ? backgroundView : nil
@@ -93,14 +98,6 @@ extension MainViewController: UICollectionViewDelegate {
 		navigationController?.pushViewController(viewController, animated: true)
 	}
 }
-
-//extension MainViewController: UICollectionViewDelegateFlowLayout {
-//	
-//	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//		
-//	}
-//	
-//}
 
 // MARK: Data Loading
 
@@ -156,6 +153,8 @@ extension MainViewController: UIScrollViewDelegate {
 		
 		guard let searchTerm = searchTerm, !searchTerm.isEmpty else { return }
 
+		// Determines whether current scroll offset is greater than the reloadDistance constant
+		// and loads the next page of photos
 		let offset = scrollView.contentOffset
 		let bounds = scrollView.bounds
 		let inset = scrollView.contentInset
@@ -169,7 +168,14 @@ extension MainViewController: UIScrollViewDelegate {
 	}
 }
 
+// MARK: UISearchBarDelegate
+
 extension MainViewController: UISearchBarDelegate {
+	
+	func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+		
+		showSearchHistory()
+	}
 	
 	func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
 
@@ -185,6 +191,10 @@ extension MainViewController: UISearchBarDelegate {
 
 		searchBar.resignFirstResponder()
 		guard let searchTerm = searchTerm, !searchTerm.isEmpty else { return }
+		
+		addSearchTerm(searchTerm: searchTerm)
+		
+		hideSearchHistory()
 		
 		reset()
 		collectionView.reloadData()

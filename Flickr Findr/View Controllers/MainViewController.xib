@@ -15,6 +15,8 @@
                 <outlet property="activityIndicator" destination="WQT-OR-QFe" id="NYs-cd-41c"/>
                 <outlet property="collectionView" destination="0WT-Is-ohO" id="Z8A-oo-Wah"/>
                 <outlet property="searchBar" destination="qBy-aD-MOm" id="VjB-NU-QEK"/>
+                <outlet property="searchHistoryTableHeightConstraint" destination="5e0-Pt-ydW" id="KmW-pZ-j6D"/>
+                <outlet property="searchHistoryTableView" destination="DDd-fd-KtW" id="Rey-za-sQJ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="q4k-wO-Pqy"/>
             </connections>
         </placeholder>
@@ -51,14 +53,28 @@
                         <constraint firstAttribute="height" constant="20" id="wHB-UF-wPg"/>
                     </constraints>
                 </activityIndicatorView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DDd-fd-KtW">
+                    <rect key="frame" x="65" y="76" width="245" height="0.0"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" id="5e0-Pt-ydW"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="YZY-he-kic"/>
+                        <outlet property="delegate" destination="-1" id="Ocd-zK-ycg"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DDd-fd-KtW" secondAttribute="trailing" constant="65" id="3am-8W-0jw"/>
                 <constraint firstItem="qBy-aD-MOm" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="8Mf-Hg-iGf"/>
                 <constraint firstItem="WQT-OR-QFe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="B6l-iG-E5W"/>
                 <constraint firstItem="qBy-aD-MOm" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="GPm-tJ-LWT"/>
+                <constraint firstItem="DDd-fd-KtW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="65" id="Nax-nJ-LUh"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="0WT-Is-ohO" secondAttribute="trailing" id="dlh-w1-mUz"/>
                 <constraint firstItem="qBy-aD-MOm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="fSZ-LS-BJw"/>
+                <constraint firstItem="DDd-fd-KtW" firstAttribute="top" secondItem="qBy-aD-MOm" secondAttribute="bottom" id="qwC-0A-rrR"/>
                 <constraint firstItem="0WT-Is-ohO" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sGt-Ea-aaV"/>
                 <constraint firstItem="0WT-Is-ohO" firstAttribute="top" secondItem="qBy-aD-MOm" secondAttribute="bottom" id="sNh-gt-SoW"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0WT-Is-ohO" secondAttribute="bottom" id="weu-IU-8g4"/>

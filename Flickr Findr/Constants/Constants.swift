@@ -6,7 +6,7 @@
 //  Copyright © 2019 Digital Beans. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Constants {
 	
@@ -31,5 +31,15 @@ struct Constants {
 	
 	struct titles {
 		static let appTitle = "Flickr Findr"
+	}
+	
+	struct UserDefaults {
+		static let Suite = "group.com.digitalbeans.flickrfindr"
+		static let SearchHistoryKey = "SearchHistory"
+	}
+	
+	struct SearchHistory {
+		static let CellHeight: CGFloat = 34.0
+		static let HeaderHeight: CGFloat = 30.0
 	}
 }
