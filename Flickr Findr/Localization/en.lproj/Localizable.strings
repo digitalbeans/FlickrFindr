@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  Flickr Findr
+
+  Created by Dean Thibault on 2/19/19.
+  Copyright © 2019 Digital Beans. All rights reserved.
+*/
+
+"No matching photos found, please enter a new search term." = "No matching photos found, please enter a new search term.";
+"An error was encountered." = "An error was encountered.";
+"Error" = "Error";
+"OK" = "OK";
+"Back" = "Back";
