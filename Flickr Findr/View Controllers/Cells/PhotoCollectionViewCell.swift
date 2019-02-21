@@ -19,6 +19,12 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 	
+	/// Setup the cell using the photo
+	///
+	/// - parameter photo: The photo to display in this cell.
+	///
+	/// - returns: void
+
 	func setupCell(photo: Photo) {
 		
 		imageView.image = nil

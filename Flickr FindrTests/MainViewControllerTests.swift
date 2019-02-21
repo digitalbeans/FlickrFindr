@@ -11,6 +11,7 @@ import XCTest
 
 class MainViewControllerTests: XCTestCase {
 	
+	/// the view controller to be tested
 	var mainViewController: MainViewController = MainViewController()
 
     override func setUp() {

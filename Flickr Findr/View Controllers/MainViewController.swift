@@ -18,9 +18,9 @@ class MainViewController: UIViewController {
 	
 	private var pageOffset: Int = 0
 	private var photos: [Photo] = []
-	var searchTerm: String?
 	private let reloadDistance: CGFloat = 50
 	private let dataLoader = DataLoader()
+	var searchTerm: String?
 	var searchHistory: [String] = []
 
     override func viewDidLoad() {

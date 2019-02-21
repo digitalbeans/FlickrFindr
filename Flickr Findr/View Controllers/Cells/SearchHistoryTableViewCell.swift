@@ -11,6 +11,7 @@ import UIKit
 /// Custom table view cell for displaying search history
 class SearchHistoryTableViewCell: UITableViewCell {
 	
+	/// Label to dispaly the search term
 	@IBOutlet var titleLabel: UILabel!
 
     override func awakeFromNib() {

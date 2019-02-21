@@ -11,7 +11,10 @@ import UIKit
 /// Custom table view cell used for displaying the search history table header
 class SearchHistoryHeaderViewCell: UITableViewCell {
 	
+	/// Button to clear search history.
 	@IBOutlet var clearButton: UIButton!
+	
+	/// Button to dismiss search history
 	@IBOutlet var cancelButton: UIButton!
 
     override func awakeFromNib() {

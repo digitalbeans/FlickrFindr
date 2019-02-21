@@ -17,7 +17,7 @@ extension UserDefaults {
 
 	static func searchHistory() -> UserDefaults? {
 		
-		return UserDefaults.init(suiteName: Constants.UserDefaults.Suite)
+		return UserDefaults.init(suiteName: Constants.UserDefaults.suite)
 	}
 	
 	/// Saves the search history to user defaults
@@ -28,7 +28,7 @@ extension UserDefaults {
 	
 	static func saveSearchHistory(searchHistory: [String]) {
 		
-		UserDefaults.searchHistory()?.set(searchHistory, forKey: Constants.UserDefaults.SearchHistoryKey)
+		UserDefaults.searchHistory()?.set(searchHistory, forKey: Constants.UserDefaults.searchHistoryKey)
 		UserDefaults.searchHistory()?.synchronize()
 	}
 	
@@ -38,7 +38,7 @@ extension UserDefaults {
 	
 	static func loadSearchHistory() -> [String] {
 		
-		guard let array = UserDefaults.searchHistory()?.array(forKey: Constants.UserDefaults.SearchHistoryKey) as? [String]  else { return [] }
+		guard let array = UserDefaults.searchHistory()?.array(forKey: Constants.UserDefaults.searchHistoryKey) as? [String]  else { return [] }
 		
 		return array
 	}
