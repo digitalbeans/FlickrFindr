@@ -201,12 +201,15 @@ extension MainViewController: UISearchBarDelegate {
 		searchBar.resignFirstResponder()
 		guard let searchTerm = searchTerm, !searchTerm.isEmpty else { return }
 		
-		addSearchTerm(searchTerm: searchTerm)
+		// save new search term to search history
+		searchHistory =  UserDefaults.addSearchTerm(searchTerm: searchTerm)
 		
 		hideSearchHistory()
 		
+		// reset and refresh
 		reset()
 		collectionView.reloadData()
+		// retrieve photos for specified search term
 		loadData(searchTerm: searchTerm, dataLoader: dataLoader)
 	}
 	

@@ -74,20 +74,6 @@ extension MainViewController {
 		UserDefaults.saveSearchHistory(searchHistory: searchHistory)
 		hideSearchHistory()
 	}
-
-	/// Adds item to search history and saves to user defaults
-	///
-	/// - parameter searchTerm: The new search term to add.
-	///
-	/// - returns: void
-
-	func addSearchTerm(searchTerm: String) {
-		
-		var array = searchHistory.filter { $0 != searchTerm }
-		array.insert(searchTerm, at: 0)
-		searchHistory = array
-		UserDefaults.saveSearchHistory(searchHistory: array)
-	}
 	
 	/// Hides the search history table view
 	///

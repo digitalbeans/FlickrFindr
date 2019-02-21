@@ -11,6 +11,7 @@
 		1743E28C221DEDD400766A16 /* UserDefaults+FlickrFindr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743E28B221DEDD400766A16 /* UserDefaults+FlickrFindr.swift */; };
 		1743E28F221DF2A000766A16 /* SearchHistoryHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743E28D221DF2A000766A16 /* SearchHistoryHeaderViewCell.swift */; };
 		1743E290221DF2A000766A16 /* SearchHistoryHeaderViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1743E28E221DF2A000766A16 /* SearchHistoryHeaderViewCell.xib */; };
+		1743E292221F244D00766A16 /* SearchHistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1743E291221F244D00766A16 /* SearchHistoryTests.swift */; };
 		1759EC55221B326D00EF42CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1759EC54221B326D00EF42CD /* AppDelegate.swift */; };
 		1759EC5C221B327100EF42CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1759EC5B221B327100EF42CD /* Assets.xcassets */; };
 		1759EC5F221B327100EF42CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1759EC5D221B327100EF42CD /* LaunchScreen.storyboard */; };
@@ -49,6 +50,7 @@
 		1743E28B221DEDD400766A16 /* UserDefaults+FlickrFindr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+FlickrFindr.swift"; sourceTree = "<group>"; };
 		1743E28D221DF2A000766A16 /* SearchHistoryHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryHeaderViewCell.swift; sourceTree = "<group>"; };
 		1743E28E221DF2A000766A16 /* SearchHistoryHeaderViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHistoryHeaderViewCell.xib; sourceTree = "<group>"; };
+		1743E291221F244D00766A16 /* SearchHistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryTests.swift; sourceTree = "<group>"; };
 		1759EC51221B326D00EF42CD /* Flickr Findr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Flickr Findr.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1759EC54221B326D00EF42CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1759EC5B221B327100EF42CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				1759ECA1221D213600EF42CD /* MockObjects */,
 				1759ECA6221DAD6800EF42CD /* MainViewControllerTests.swift */,
+				1743E291221F244D00766A16 /* SearchHistoryTests.swift */,
 				1759EC6B221B327200EF42CD /* Info.plist */,
 			);
 			path = "Flickr FindrTests";
@@ -458,6 +461,7 @@
 			files = (
 				1759ECA5221DAAC700EF42CD /* MockDataLoader.swift in Sources */,
 				1759ECA7221DAD6800EF42CD /* MainViewControllerTests.swift in Sources */,
+				1743E292221F244D00766A16 /* SearchHistoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

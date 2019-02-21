@@ -43,4 +43,19 @@ extension UserDefaults {
 		return array
 	}
 	
+	/// Adds item to search history and saves to user defaults.
+	/// New search is added to the first position in the array. If new search term alrady exists in array, it is removed.
+	///
+	/// - parameter searchTerm: The new search term to add.
+	///
+	/// - returns: [String] String array representing the updated search history
+	
+	static func addSearchTerm(searchTerm: String) -> [String] {
+		
+		var array = UserDefaults.loadSearchHistory()
+		array =	array.filter { $0 != searchTerm }
+		array.insert(searchTerm, at: 0)
+		UserDefaults.saveSearchHistory(searchHistory: array)
+		return array
+	}
 }
