@@ -13,7 +13,8 @@ struct Constants {
 	struct Flickr {
 		
 		/// Flickr api-key
-		static let apiKey = "1508443e49213ff84d566777dc211f2a"
+		// Add your own Flickr api-key here
+		static let apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 		
 		/// URL to use for the photo search REST API
 		static let photoSearchURL = "https://api.flickr.com/services/rest/?method=flickr.photos.search"
